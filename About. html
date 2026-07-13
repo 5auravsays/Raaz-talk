@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मेरे बारे में</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>मेरे बारे में</h1>
+
+<p>
+नमस्ते! मेरा नाम <strong>सौरव</strong> है।
+मुझे हिंदी कविताएँ और शायरी लिखना पसंद है।
+यह वेबसाइट मेरी सभी कविताओं को एक जगह पढ़ने के लिए बनाई गई है।
+</p>
+
+<p>
+<a href="index.html">🏠 होम पेज</a>
+</p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
