@@ -1,61 +1,90 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>मेरी कविताएँ</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Serif Devanagari",serif;
+}
 
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+body{
+    background:linear-gradient(135deg,#ffe4ec,#fff5f8);
+    color:#333;
+    text-align:center;
+    padding:30px 15px;
+}
 
-<h1>📖 मेरी कविताएँ</h1>
+header{
+    margin-bottom:30px;
+}
 
-<div class="poem">
+h1{
+    color:#ff2d75;
+    font-size:42px;
+    margin-bottom:10px;
+}
 
-<h2>कविता 1 - मेरा सपना</h2>
+h2{
+    color:#ff2d75;
+    margin-bottom:15px;
+    font-size:28px;
+}
 
-<p>
-मैं चलता रहा राहों में,<br>
-सपनों को सजाता रहा।<br>
-मुश्किलें लाख आईं मगर,<br>
-हौसलों को बढ़ाता रहा।
-</p>
+p{
+    font-size:18px;
+    line-height:1.8;
+}
 
-</div>
+.poem{
+    max-width:700px;
+    margin:25px auto;
+    padding:25px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
 
-<div class="poem">
+.poem p{
+    font-size:20px;
+    line-height:2;
+}
 
-<h2>कविता 2 - दोस्ती</h2>
+a{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    background:#ff2d75;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:18px;
+    transition:0.3s;
+}
 
-<p>
-दोस्ती वो रिश्ता है,<br>
-जो हर पल साथ निभाता है।<br>
-दुख में भी मुस्कान देकर,<br>
-जीना सिखाता है।
-</p>
+a:hover{
+    background:#e6005c;
+    transform:scale(1.05);
+}
 
-</div>
+@media (max-width:768px){
 
-<!-- नई कविता जोड़ने के लिए यही पूरा ब्लॉक कॉपी करें -->
+    h1{
+        font-size:32px;
+    }
 
-<div class="poem">
+    h2{
+        font-size:24px;
+    }
 
-<h2>कविता 3 - शीर्षक</h2>
+    .poem{
+        width:95%;
+        padding:20px;
+    }
 
-<p>
-यहाँ अपनी कविता लिखें...<br>
-दूसरी पंक्ति...<br>
-तीसरी पंक्ति...
-</p>
+    .poem p{
+        font-size:18px;
+    }
 
-</div>
-
-<p>
-<a href="index.html">🏠 होम पेज</a>
-</p>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    a{
+        width:90%;
+        max-width:300px;
+    }
+}
