@@ -1,40 +1,61 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Noto Serif Devanagari", serif;
-}
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मेरी कविताएँ</title>
 
-body{
-    background:linear-gradient(135deg,#ffe4ec,#fff5f8);
-    text-align:center;
-    color:#333;
-    padding:40px 20px;
-}
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-h1{
-    color:#ff2d75;
-    font-size:40px;
-    margin-bottom:10px;
-}
+<h1>📖 मेरी कविताएँ</h1>
 
-p{
-    font-size:18px;
-    margin-bottom:30px;
-}
+<div class="poem">
 
-a{
-    display:inline-block;
-    text-decoration:none;
-    background:#ff2d75;
-    color:#fff;
-    padding:14px 28px;
-    border-radius:30px;
-    font-size:18px;
-    transition:.3s;
-}
+<h2>कविता 1 - मेरा सपना</h2>
 
-a:hover{
-    background:#e6005c;
-    transform:scale(1.05);
-}
+<p>
+मैं चलता रहा राहों में,<br>
+सपनों को सजाता रहा।<br>
+मुश्किलें लाख आईं मगर,<br>
+हौसलों को बढ़ाता रहा।
+</p>
+
+</div>
+
+<div class="poem">
+
+<h2>कविता 2 - दोस्ती</h2>
+
+<p>
+दोस्ती वो रिश्ता है,<br>
+जो हर पल साथ निभाता है।<br>
+दुख में भी मुस्कान देकर,<br>
+जीना सिखाता है।
+</p>
+
+</div>
+
+<!-- नई कविता जोड़ने के लिए यही पूरा ब्लॉक कॉपी करें -->
+
+<div class="poem">
+
+<h2>कविता 3 - शीर्षक</h2>
+
+<p>
+यहाँ अपनी कविता लिखें...<br>
+दूसरी पंक्ति...<br>
+तीसरी पंक्ति...
+</p>
+
+</div>
+
+<p>
+<a href="index.html">🏠 होम पेज</a>
+</p>
+
+<script src="script.js"></script>
+
+</body>
+</html>
