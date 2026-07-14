@@ -88,3 +88,63 @@ a:hover{
         max-width:300px;
     }
 }
+/* Page Animation */
+body{
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Heading Animation */
+h1{
+    animation: slideDown 1s ease;
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Poetry Card Animation */
+.poem{
+    animation: zoomIn 0.8s ease;
+    transition:0.4s;
+}
+
+.poem:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 35px rgba(255,45,117,.3);
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* Button Animation */
+a{
+    transition:.3s;
+}
+
+a:hover{
+    transform:scale(1.1);
+}
