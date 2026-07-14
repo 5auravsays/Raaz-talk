@@ -22,13 +22,9 @@ body{
     100%{background-position:0% 50%;}
 }
 
-
 header{
     margin-bottom:35px;
 }
-
-
-/* Heading */
 
 h1{
     font-size:48px;
@@ -40,12 +36,10 @@ h1{
     animation:gradientText 5s linear infinite;
 }
 
-
 @keyframes gradientText{
     from{background-position:0%;}
     to{background-position:300%;}
 }
-
 
 h2{
     color:#ff2d75;
@@ -53,19 +47,14 @@ h2{
     font-size:30px;
 }
 
-
 p{
     font-size:19px;
     line-height:1.9;
 }
 
-
-/* Profile */
-
 .profile{
     margin:30px 0;
 }
-
 
 .profile img{
     width:190px;
@@ -74,16 +63,12 @@ p{
     object-fit:cover;
     border:6px solid #ff2d75;
     box-shadow:0 0 30px rgba(255,45,117,.5);
-    transition:.5s;
+    transition:.4s;
 }
-
 
 .profile img:hover{
-    transform:scale(1.08) rotate(3deg);
+    transform:scale(1.05);
 }
-
-
-/* Poetry Card */
 
 .poem{
     width:90%;
@@ -97,38 +82,32 @@ p{
     animation:float 4s ease-in-out infinite;
 }
 
-
 @keyframes float{
     0%{transform:translateY(0);}
     50%{transform:translateY(-8px);}
     100%{transform:translateY(0);}
 }
 
-
 .poem p{
     font-size:21px;
     line-height:2;
 }
-
-
-/* Buttons */
 
 a{
     display:inline-block;
     margin:12px;
     padding:15px 35px;
     background:#ff2d75;
-    color:white;
+    color:#fff;
     text-decoration:none;
     border-radius:40px;
     font-size:18px;
-    transition:.4s;
+    transition:.3s;
     box-shadow:0 0 20px rgba(255,45,117,.35);
 }
 
-
 a:hover{
-    transform:translateY(-4px) scale(1.06);
+    transform:translateY(-4px);
 }
 /* ========================= */
 /* Loader */
@@ -148,12 +127,10 @@ a:hover{
     animation:hideLoader .8s ease 2s forwards;
 }
 
-
 #loader h1{
     font-size:48px;
     animation:pulse 1.2s infinite;
 }
-
 
 @keyframes pulse{
     0%{transform:scale(1);}
@@ -161,15 +138,12 @@ a:hover{
     100%{transform:scale(1);}
 }
 
-
 @keyframes hideLoader{
     to{
         opacity:0;
         visibility:hidden;
     }
 }
-
-
 
 /* ========================= */
 /* Scroll Animation */
@@ -181,13 +155,10 @@ a:hover{
     transition:.8s;
 }
 
-
 .show{
     opacity:1;
     transform:translateY(0);
 }
-
-
 
 /* ========================= */
 /* Falling Flowers */
@@ -202,27 +173,20 @@ a:hover{
     animation:fall linear forwards;
 }
 
-
 @keyframes fall{
-
     0%{
         transform:translateY(-50px) rotate(0deg);
         opacity:1;
     }
-
     100%{
         transform:translateY(110vh) rotate(360deg);
         opacity:0;
     }
-
 }
-
-
 
 /* ========================= */
 /* Hindwi Style Slider */
 /* ========================= */
-
 
 .slider{
     width:95%;
@@ -232,57 +196,49 @@ a:hover{
     overflow:hidden;
     position:relative;
     border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    background:#fff;
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
 }
-
 
 .slides{
     display:flex;
+    width:100%;
     height:100%;
-    transition:transform .6s ease;
+    transition:transform .6s ease-in-out;
 }
-
 
 .slides img{
     width:100%;
     min-width:100%;
-    height:260px;
+    height:100%;
     object-fit:cover;
     flex-shrink:0;
-    border-radius:0;
+    display:block;
 }
-
-
 
 .dots{
     position:absolute;
-    bottom:12px;
+    bottom:15px;
     left:50%;
     transform:translateX(-50%);
     display:flex;
     gap:8px;
 }
 
-
-
 .dot{
     width:10px;
     height:10px;
-    background:#bbb;
     border-radius:50%;
+    background:#ccc;
+    cursor:pointer;
     transition:.3s;
 }
 
-
-
 .dot.active{
-    width:25px;
+    width:26px;
     border-radius:20px;
     background:#ff2d75;
 }
-
-
-
 /* ========================= */
 /* Footer */
 /* ========================= */
@@ -291,86 +247,17 @@ footer{
     margin-top:60px;
     padding:25px;
     color:#555;
+    text-align:center;
 }
-
-
 
 /* ========================= */
-/* Scrollbar */
+/* Categories */
 /* ========================= */
 
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-
-::-webkit-scrollbar-track{
-    background:#ffe4ec;
-}
-
-
-::-webkit-scrollbar-thumb{
-    background:#ff2d75;
-    border-radius:20px;
-}
-
-
-
-/* ========================= */
-/* Mobile */
-/* ========================= */
-
-
-@media(max-width:768px){
-
-    h1{
-        font-size:34px;
-    }
-
-
-    h2{
-        font-size:24px;
-    }
-
-
-    .profile img{
-        width:150px;
-        height:150px;
-    }
-
-
-    .poem{
-        width:95%;
-        padding:20px;
-    }
-
-
-    .poem p{
-        font-size:18px;
-    }
-
-
-    a{
-        width:90%;
-        max-width:320px;
-    }
-
-
-    .slider{
-        height:190px;
-    }
-
-
-    .slides img{
-        height:190px;
-    }
-
-}
 .categories{
     width:90%;
     max-width:700px;
-    margin:20px auto;
+    margin:25px auto;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -380,4 +267,113 @@ footer{
 .categories a{
     width:auto;
     padding:12px 25px;
+    margin:0;
+}
+
+/* ========================= */
+/* Scrollbar */
+/* ========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ffe4ec;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ff2d75;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#e61e67;
+}
+
+/* ========================= */
+/* Mobile Responsive */
+/* ========================= */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px 10px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    p{
+        font-size:17px;
+    }
+
+    .profile img{
+        width:150px;
+        height:150px;
+    }
+
+    .poem{
+        width:95%;
+        padding:20px;
+    }
+
+    .poem p{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    a{
+        width:90%;
+        max-width:320px;
+    }
+
+    .slider{
+        height:190px;
+        border-radius:15px;
+    }
+
+    .slides img{
+        height:190px;
+    }
+
+    .categories{
+        gap:10px;
+    }
+
+    .categories a{
+        width:45%;
+        padding:10px;
+        font-size:16px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .slider{
+        height:170px;
+    }
+
+    .slides img{
+        height:170px;
+    }
+
+    .categories a{
+        width:100%;
+    }
+
 }
