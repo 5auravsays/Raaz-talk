@@ -53,22 +53,16 @@ function createFlower(){
 
 // कम फूल बनेंगे
 setInterval(createFlower,1000);
-// Auto Image Slider
-
 const slides = document.querySelectorAll(".slide");
 
-let current = 0;
+let currentSlide = 0;
 
 setInterval(() => {
 
-    slides[current].classList.remove("active");
+    slides[currentSlide].classList.remove("active");
 
-    current++;
+    currentSlide = (currentSlide + 1) % slides.length;
 
-    if(current >= slides.length){
-        current = 0;
-    }
+    slides[currentSlide].classList.add("active");
 
-    slides[current].classList.add("active");
-
-},3000);
+}, 3000);
