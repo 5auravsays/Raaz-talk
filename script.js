@@ -59,10 +59,33 @@ let currentSlide = 0;
 
 setInterval(() => {
 
-    slides[currentSlide].classList.remove("active");
+    .slider{
+    width:95%;
+    max-width:900px;
+    margin:20px auto;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
 
-    currentSlide = (currentSlide + 1) % slides.length;
+.slides{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+}
 
-    slides[currentSlide].classList.add("active");
+.slides::-webkit-scrollbar{
+    display:none;
+}
 
-}, 3000);
+.slides img{
+    flex:0 0 100%;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:0;   /* Circle nahi banega */
+    border:none;
+    scroll-snap-align:start;
+}
