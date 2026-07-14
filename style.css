@@ -274,3 +274,27 @@ h1{
         opacity:0;
     }
 }
+.profile{
+    text-align:center;
+    margin:40px 0;
+}
+
+.profile img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #ff2d75;
+    box-shadow:0 0 25px rgba(255,45,117,.5);
+    transition:.4s;
+}
+
+.profile img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 40px rgba(255,45,117,.8);
+}
+
+.profile h2{
+    margin-top:15px;
+    color:#ff2d75;
+}
