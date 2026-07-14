@@ -3,94 +3,142 @@
     padding:0;
     box-sizing:border-box;
     font-family:"Noto Serif Devanagari",serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:linear-gradient(135deg,#ffe4ec,#fff5f8);
+    background:linear-gradient(-45deg,#ffd6e7,#ffe4ec,#fff5f8,#ffd1dc);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
     color:#333;
     text-align:center;
     padding:30px 15px;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 header{
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 h1{
-    color:#ff2d75;
-    font-size:42px;
-    margin-bottom:10px;
+    font-size:48px;
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#ff2d75,#ff8fb8,#ff2d75);
+    background-size:300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:gradientText 5s linear infinite;
+}
+
+@keyframes gradientText{
+    from{background-position:0%;}
+    to{background-position:300%;}
 }
 
 h2{
     color:#ff2d75;
     margin-bottom:15px;
-    font-size:28px;
+    font-size:30px;
 }
 
 p{
-    font-size:18px;
-    line-height:1.8;
+    font-size:19px;
+    line-height:1.9;
 }
 
+/* Profile */
+
+.profile{
+    margin:30px 0;
+}
+
+.profile img{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ff2d75;
+    box-shadow:0 0 30px rgba(255,45,117,.5);
+    transition:.5s;
+}
+
+.profile img:hover{
+    transform:scale(1.08) rotate(3deg);
+    box-shadow:0 0 45px rgba(255,45,117,.8);
+}
+
+/* Cards */
+
 .poem{
-    max-width:700px;
-    margin:25px auto;
-    padding:25px;
-    background:#ffffff;
-    border-radius:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    width:90%;
+    max-width:760px;
+    margin:30px auto;
+    padding:30px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(10px);
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.5);
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.poem:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 18px 40px rgba(255,45,117,.35);
 }
 
 .poem p{
-    font-size:20px;
+    font-size:21px;
     line-height:2;
 }
 
+/* Buttons */
+
 a{
     display:inline-block;
-    margin-top:25px;
-    padding:14px 30px;
+    margin:12px;
+    padding:15px 35px;
     background:#ff2d75;
     color:#fff;
     text-decoration:none;
-    border-radius:30px;
+    border-radius:40px;
     font-size:18px;
-    transition:0.3s;
+    transition:.4s;
+    box-shadow:0 0 20px rgba(255,45,117,.35);
 }
 
 a:hover{
     background:#e6005c;
-    transform:scale(1.05);
+    transform:translateY(-4px) scale(1.06);
+    box-shadow:0 0 35px rgba(255,45,117,.7);
 }
 
-@media (max-width:768px){
-
-    h1{
-        font-size:32px;
-    }
-
-    h2{
-        font-size:24px;
-    }
-
-    .poem{
-        width:95%;
-        padding:20px;
-    }
-
-    .poem p{
-        font-size:18px;
-    }
-
-    a{
-        width:90%;
-        max-width:300px;
-    }
+footer{
+    margin-top:60px;
+    padding:25px;
 }
-/* Page Animation */
+
+@media(max-width:768px){
+
+h1{
+font-size:34px;
+}
+
+h2{
+font-size:24px;
+}
+/* ========================= */
+/* Page Fade Animation */
+/* ========================= */
+
 body{
-    animation: fadeIn 1s ease;
+    animation:fadeIn 1s ease;
 }
 
 @keyframes fadeIn{
@@ -102,53 +150,9 @@ body{
     }
 }
 
-/* Heading Animation */
-h1{
-    animation: slideDown 1s ease;
-}
-
-@keyframes slideDown{
-    from{
-        opacity:0;
-        transform:translateY(-40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Poetry Card Animation */
-.poem{
-    animation: zoomIn 0.8s ease;
-    transition:0.4s;
-}
-
-.poem:hover{
-    transform:translateY(-10px) scale(1.03);
-    box-shadow:0 15px 35px rgba(255,45,117,.3);
-}
-
-@keyframes zoomIn{
-    from{
-        opacity:0;
-        transform:scale(.8);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-/* Button Animation */
-a{
-    transition:.3s;
-}
-
-a:hover{
-    transform:scale(1.1);
-}
+/* ========================= */
 /* Scroll Animation */
+/* ========================= */
 
 .hidden{
     opacity:0;
@@ -161,36 +165,28 @@ a:hover{
     transform:translateY(0);
 }
 
-/* Animated Background */
-
-body{
-    background:linear-gradient(-45deg,#ffd6e7,#ffe4ec,#fff,#ffd1dc);
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
-}
-
-@keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-}
-
-/* Premium Button */
-
-a{
-    box-shadow:0 0 20px rgba(255,45,117,.4);
-}
-
-a:hover{
-    box-shadow:0 0 35px rgba(255,45,117,.8);
-}
-
-/* Premium Card */
+/* ========================= */
+/* Floating Card Animation */
+/* ========================= */
 
 .poem{
-    backdrop-filter:blur(8px);
-    border:1px solid rgba(255,255,255,.4);
+    animation:float 4s ease-in-out infinite;
 }
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
 /* ========================= */
 /* Loader */
 /* ========================= */
@@ -210,91 +206,116 @@ a:hover{
 }
 
 #loader h1{
-    color:#ff2d75;
-    font-size:50px;
+    font-size:48px;
     animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-    100%{transform:scale(1);}
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
 }
 
 @keyframes hideLoader{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
+
+to{
+opacity:0;
+visibility:hidden;
 }
 
-/* Floating Animation */
-
-.poem{
-    animation:float 3s ease-in-out infinite;
 }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-}
+/* ========================= */
+/* Falling Flowers */
+/* ========================= */
 
-/* Gradient Heading */
-
-h1{
-    background:linear-gradient(90deg,#ff2d75,#ff7aa2,#ff2d75);
-    background-size:300%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:gradientText 5s linear infinite;
-}
-
-@keyframes gradientText{
-    0%{background-position:0%;}
-    100%{background-position:300%;}
-}
 .flower{
-    position:fixed;
-    top:-50px;
-    font-size:25px;
-    pointer-events:none;
-    animation:fall linear forwards;
-    z-index:999;
+position:fixed;
+top:-60px;
+font-size:28px;
+pointer-events:none;
+z-index:999;
+animation:fall linear forwards;
 }
 
 @keyframes fall{
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-        opacity:1;
-    }
 
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-        opacity:0;
-    }
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
 }
-.profile{
-    text-align:center;
-    margin:40px 0;
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* ========================= */
+/* Footer */
+/* ========================= */
+
+footer{
+font-size:16px;
+color:#555;
+}
+
+/* ========================= */
+/* Selection Color */
+/* ========================= */
+
+::selection{
+background:#ff2d75;
+color:#fff;
+}
+
+/* ========================= */
+/* Scrollbar */
+/* ========================= */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-track{
+background:#ffe4ec;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff2d75;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#e6005c;
 }
 
 .profile img{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    object-fit:cover;
-    border:5px solid #ff2d75;
-    box-shadow:0 0 25px rgba(255,45,117,.5);
-    transition:.4s;
+width:150px;
+height:150px;
 }
 
-.profile img:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 40px rgba(255,45,117,.8);
+.poem{
+padding:20px;
 }
 
-.profile h2{
-    margin-top:15px;
-    color:#ff2d75;
+.poem p{
+font-size:18px;
+}
+
+a{
+width:90%;
+max-width:320px;
+}
 }
