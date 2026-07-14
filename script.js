@@ -23,3 +23,24 @@ window.addEventListener("load", () => {
 });
 
 document.body.style.overflow = "hidden";
+function createFlower(){
+
+    const flower = document.createElement("div");
+
+    flower.classList.add("flower");
+
+    flower.innerHTML = "🌸";
+
+    flower.style.left = Math.random()*100 + "vw";
+
+    flower.style.animationDuration = (4 + Math.random()*4) + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(()=>{
+        flower.remove();
+    },8000);
+
+}
+
+setInterval(createFlower,500);
