@@ -1,4 +1,3 @@
-
 /* Scroll Animation */
 
 .hidden{
