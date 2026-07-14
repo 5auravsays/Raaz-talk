@@ -59,21 +59,10 @@ let currentSlide = 0;
 
 setInterval(() => {
 
-    const slides = document.querySelector(".slides");
+    slides[currentSlide].classList.remove("active");
 
-let i = 0;
+    currentSlide = (currentSlide + 1) % slides.length;
 
-setInterval(() => {
+    slides[currentSlide].classList.add("active");
 
-    i++;
-
-    if(i >= slides.children.length){
-        i = 0;
-    }
-
-    slides.scrollTo({
-        left: i * slides.clientWidth,
-        behavior: "smooth"
-    });
-
-},3000);
+}, 3000);
