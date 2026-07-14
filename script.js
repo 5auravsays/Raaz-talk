@@ -79,13 +79,42 @@ setInterval(() => {
 .slides::-webkit-scrollbar{
     display:none;
 }
+const slides = document.querySelector(".slides");
+const imgs = document.querySelectorAll(".slides img");
+const dots = document.querySelectorAll(".dot");
 
-.slides img{
-    flex:0 0 100%;
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:0;   /* Circle nahi banega */
-    border:none;
-    scroll-snap-align:start;
+let index = 0;
+
+function showSlide(i){
+    slides.style.transform = `translateX(-${i*100}%)`;
+
+    dots.forEach(d=>d.classList.remove("active"));
+    dots[i].classList.add("active");
 }
+
+function nextSlide(){
+    index++;
+    if(index>=imgs.length) index=0;
+    showSlide(index);
+}
+
+setInterval(nextSlide,3000);
+
+// Swipe Support
+let startX=0;
+
+slides.addEventListener("touchstart",(e)=>{
+    startX=e.touches[0].clientX;
+});
+
+slides.addEventListener("touchend",(e)=>{
+    let endX=e.changedTouches[0].clientX;
+
+    if(startX-endX>50){
+        index=(index+1)%imgs.length;
+    }else if(endX-startX>50){
+        index=(index-1+imgs.length)%imgs.length;
+    }
+
+    showSlide(index);
+});
