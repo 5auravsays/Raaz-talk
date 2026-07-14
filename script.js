@@ -1,6 +1,14 @@
 
+
 // Smooth Scroll
 document.documentElement.style.scrollBehavior = "smooth";
+
+// Loader
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+    document.body.style.overflow = "auto";
+});
 
 // Scroll Animation
 const cards = document.querySelectorAll(".poem");
@@ -18,14 +26,8 @@ cards.forEach(card => {
     observer.observe(card);
 });
 
-// Loader
-window.addEventListener("load", () => {
-    document.body.style.overflow = "auto";
-});
-
-document.body.style.overflow = "hidden";
-
-function createFlower(){
+// Falling Flowers
+function createFlower() {
 
     const flower = document.createElement("div");
 
@@ -33,89 +35,86 @@ function createFlower(){
 
     flower.innerHTML = "🌷";
 
-    flower.style.left = Math.random()*100 + "vw";
-
-    // अलग-अलग साइज
-    flower.style.fontSize = (15 + Math.random()*20) + "px";
-
-    // अलग-अलग स्पीड
-    flower.style.animationDuration = (6 + Math.random()*6) + "s";
-
-    // थोड़ा-थोड़ा delay
-    flower.style.animationDelay = Math.random()*2 + "s";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.fontSize = (15 + Math.random() * 20) + "px";
+    flower.style.animationDuration = (6 + Math.random() * 6) + "s";
+    flower.style.animationDelay = Math.random() * 2 + "s";
 
     document.body.appendChild(flower);
 
-    setTimeout(()=>{
+    setTimeout(() => {
         flower.remove();
-    },12000);
-
+    }, 12000);
 }
 
-// कम फूल बनेंगे
-setInterval(createFlower,1000);
-const slides = document.querySelectorAll(".slide");
+setInterval(createFlower, 1000);
 
-let currentSlide = 0;
+// =======================
+// Slider
+// =======================
 
-setInterval(() => {
-
-    .slider{
-    width:95%;
-    max-width:900px;
-    margin:20px auto;
-    overflow:hidden;
-    border-radius:15px;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
-}
-
-.slides{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
-}
-
-.slides::-webkit-scrollbar{
-    display:none;
-}
 const slides = document.querySelector(".slides");
-const imgs = document.querySelectorAll(".slides img");
+const images = document.querySelectorAll(".slides img");
 const dots = document.querySelectorAll(".dot");
 
 let index = 0;
 
-function showSlide(i){
-    slides.style.transform = `translateX(-${i*100}%)`;
+function showSlide(i) {
 
-    dots.forEach(d=>d.classList.remove("active"));
+    slides.style.transform = `translateX(-${i * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+
     dots[i].classList.add("active");
 }
 
-function nextSlide(){
+function nextSlide() {
+
     index++;
-    if(index>=imgs.length) index=0;
-    showSlide(index);
-}
 
-setInterval(nextSlide,3000);
-
-// Swipe Support
-let startX=0;
-
-slides.addEventListener("touchstart",(e)=>{
-    startX=e.touches[0].clientX;
-});
-
-slides.addEventListener("touchend",(e)=>{
-    let endX=e.changedTouches[0].clientX;
-
-    if(startX-endX>50){
-        index=(index+1)%imgs.length;
-    }else if(endX-startX>50){
-        index=(index-1+imgs.length)%imgs.length;
+    if (index >= images.length) {
+        index = 0;
     }
 
     showSlide(index);
+}
+
+// Auto Slide
+setInterval(nextSlide, 3000);
+
+// Swipe Support
+let startX = 0;
+
+slides.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
 });
+
+slides.addEventListener("touchend", (e) => {
+
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        index = (index + 1) % images.length;
+    } else if (endX - startX > 50) {
+        index = (index - 1 + images.length) % images.length;
+    }
+
+    showSlide(index);
+
+});
+
+// Click on Dots
+dots.forEach((dot, i) => {
+
+    dot.addEventListener("click", () => {
+
+        index = i;
+
+        showSlide(index);
+
+    });
+
+});
+
+// First Slide
+showSlide(0);
