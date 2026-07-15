@@ -130,3 +130,36 @@ searchBar.addEventListener("keyup", () => {
       : "none";
   });
 });
+// =======================
+// Search Function
+// =======================
+
+const searchBar = document.getElementById("searchBar");
+
+if(searchBar){
+
+searchBar.addEventListener("keyup", function(){
+
+let value = this.value.toLowerCase();
+
+let poems = document.querySelectorAll(".poem");
+
+
+poems.forEach(poem => {
+
+let text = poem.innerText.toLowerCase();
+
+
+if(text.includes(value)){
+    poem.style.display="block";
+}
+else{
+    poem.style.display="none";
+}
+
+});
+
+
+});
+
+}
