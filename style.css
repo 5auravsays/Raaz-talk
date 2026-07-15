@@ -1,4 +1,4 @@
-😔*{
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -184,6 +184,9 @@ a:hover{
     }
 }
 
+/* ========================= */
+/* Slider */
+/* ========================= */
 
 .slider{
     position:relative;
@@ -193,20 +196,50 @@ a:hover{
     margin:25px auto;
     overflow:hidden;
     border-radius:18px;
+    background:#fff;
     box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
+.slides{
+    display:flex;
+    width:100%;
+    height:100%;
+    transition:transform .6s ease-in-out;
+}
 
+.slides img{
+    flex:0 0 100%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
 
 .dots{
     position:absolute;
+    bottom:15px;
     left:50%;
-    bottom:12px;
     transform:translateX(-50%);
     display:flex;
     gap:8px;
     z-index:10;
 }
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#ccc;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    width:26px;
+    border-radius:20px;
+    background:#ff2d75;
+}
+
 /* ========================= */
 /* Footer */
 /* ========================= */
@@ -302,7 +335,9 @@ footer{
     }
 
     .slider{
+        width:95%;
         height:190px;
+        margin:20px auto;
         border-radius:15px;
     }
 
@@ -319,7 +354,6 @@ footer{
         padding:10px;
         font-size:16px;
     }
-
 }
 
 @media (max-width:480px){
@@ -332,4 +366,28 @@ footer{
         font-size:20px;
     }
 
-   
+    p{
+        font-size:16px;
+    }
+
+    .profile img{
+        width:130px;
+        height:130px;
+    }
+
+    .poem{
+        padding:16px;
+    }
+
+    .slider{
+        height:170px;
+    }
+
+    .slides img{
+        height:170px;
+    }
+
+    .categories a{
+        width:100%;
+    }
+}
