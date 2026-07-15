@@ -184,14 +184,6 @@ a:hover{
     }
 }
 
-.slider{
-    position:relative;
-    width:100vw;
-    aspect-ratio:20/9;
-    margin-left:calc(50% - 50vw);
-    overflow:hidden;
-    border-radius:0;
-}
 
 .slider{
     position:relative;
@@ -333,16 +325,7 @@ footer{
     .categories{
         gap:10px;
     }
-.slider{
-    position:relative;
-    width:100vw;
-    height:240px;
-    margin:20px 0;
-    margin-left:calc(50% - 50vw);
-    overflow:hidden;
-    border-radius:0;
-    box-shadow:none;
-}
+
     .categories a{
         width:45%;
         padding:10px;
