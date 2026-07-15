@@ -119,3 +119,20 @@ dots.forEach((dot, i) => {
 
 // First Slide
 showSlide(0);
+const searchInput = document.querySelector(".search-box input");
+
+searchInput.addEventListener("keyup", function () {
+
+    let value = this.value.toLowerCase();
+
+    document.querySelectorAll("a").forEach(link => {
+
+        if (link.textContent.toLowerCase().includes(value)) {
+            link.style.display = "inline-block";
+        } else {
+            link.style.display = "none";
+        }
+
+    });
+
+});
