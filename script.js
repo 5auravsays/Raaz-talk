@@ -117,22 +117,16 @@ dots.forEach((dot, i) => {
 
 });
 
-// First Slide
-showSlide(0);
-const searchInput = document.querySelector(".search-box input");
+// Search Bar
+const searchBar = document.getElementById("searchBar");
+const cards = document.querySelectorAll(".card");
 
-searchInput.addEventListener("keyup", function () {
+searchBar.addEventListener("keyup", () => {
+  let value = searchBar.value.toLowerCase();
 
-    let value = this.value.toLowerCase();
-
-    document.querySelectorAll("a").forEach(link => {
-
-        if (link.textContent.toLowerCase().includes(value)) {
-            link.style.display = "inline-block";
-        } else {
-            link.style.display = "none";
-        }
-
-    });
-
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(value)
+      ? "block"
+      : "none";
+  });
 });
