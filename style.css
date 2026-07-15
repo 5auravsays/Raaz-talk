@@ -1,4 +1,4 @@
-*{
+😔*{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -200,22 +200,38 @@ a:hover{
     box-shadow:0 10px 25px rgba(0,0,0,.20);
 }
 
+.slider{
+    position:relative;
+    width:100vw;
+    aspect-ratio:20/9;
+    margin:20px 0;
+    margin-left:calc(50% - 50vw);
+    overflow:hidden;
+    border-radius:0;
+    box-shadow:none;
+    background:transparent;
+}
+
 .slides{
     display:flex;
     width:100%;
     height:100%;
-    transition:transform .6s ease-in-out;
 }
 
 .slides img{
-    width:100vw;
-    height:240px;
-    flex-shrink:0;
+    width:100%;
+    height:100%;
+    flex:0 0 100%;
     object-fit:cover;
-    object-position:center;
     display:block;
 }
 
+.dots{
+    position:absolute;
+    bottom:12px;
+    left:50%;
+    transform:translateX(-50%);
+}
 .dots{
     position:absolute;
     bottom:15px;
